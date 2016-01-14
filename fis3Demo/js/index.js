@@ -1,0 +1,21 @@
+$(function(){
+	//json静态数据
+	$.ajax({
+		type:'get',
+		url:'/api/user',
+		dataType:'json',
+		success:function(data){
+			console.log(data);
+		}
+	});
+	//node模拟动态数据
+	$.ajax({
+		type:'get',
+		url:'http://127.0.0.1:4444/dynamic',
+		dataType:'jsonp',
+		jsonp:'callback',
+		success:function(data){
+			console.log(data);
+		}
+	})
+})
